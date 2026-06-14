@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chris O'Connors</title>
+<meta name="description" content="Digital marketing. I connect businesses to the right channels, tools, and partners and get them to where they want to be.">
+<meta property="og:title" content="Chris O'Connors">
+<meta property="og:description" content="Digital marketing. I connect businesses to the right channels, tools, and partners and get them to where they want to be.">
+<meta property="og:image" content="https://res.cloudinary.com/dfg6a5max/image/upload/v1781449372/Web_Assets/CO_-_Profile_Pic/2026_Profile_Pic_cfqlxw.png">
+<meta property="og:url" content="https://www.chrisoconnors.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris O'Connors">
+<meta name="twitter:description" content="Digital marketing. I connect businesses to the right channels, tools, and partners and get them to where they want to be.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -411,15 +420,15 @@
       </div>
       <div class="form-group">
         <label for="business">What is your business and what do you sell?</label>
-        <input type="text" id="business" placeholder="e.g. SaaS tool for small contractors">
+        <input type="text" id="business" placeholder="e.g. YouTube channel, brand, service, product">
       </div>
       <div class="form-group">
         <label for="tried">What have you already tried?</label>
-        <input type="text" id="tried" placeholder="e.g. Google Ads, SEO agency, social media">
+        <input type="text" id="tried" placeholder="e.g. ads, SEO, freelancers, agencies, social media">
       </div>
       <div class="form-group">
         <label for="success">What does success look like for you?</label>
-        <input type="text" id="success" placeholder="e.g. 50 qualified leads per month">
+        <input type="text" id="success" placeholder="e.g. consistently selling my high margin offer">
       </div>
       <div class="form-group">
         <label for="budget">Budget range</label>
@@ -433,9 +442,9 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="more">Tell me more <span class="optional-label">optional</span></label>
-        <textarea id="more" placeholder="Share anything else about your business, where you are now, and where you are trying to go. The more context you give me, the better I can assess fit."></textarea>
-        <p class="textarea-hint">No need to be formal. Just be honest about where things stand.</p>
+        <label for="more">Tell me more <span class="optional-label" id="more-optional">optional</span></label>
+        <textarea id="more" placeholder="Share anything else about your business, where you are now, and where you are trying to go. Content creators (YouTube, TikTok, Instagram) are welcome too. The more context you give me, the better I can assess fit."></textarea>
+        <p class="textarea-hint" id="more-hint">No need to be formal. Just be honest about where things stand.</p>
       </div>
       <button class="submit-btn" id="submit-btn" onclick="submitForm()">Send it</button>
       <p class="form-status" id="form-status"></p>
@@ -453,6 +462,23 @@
 <script>
   const WEBHOOK_URL = 'YOUR_N8N_WEBHOOK_URL_HERE';
 
+  document.getElementById('budget').addEventListener('change', function() {
+    const optional = document.getElementById('more-optional');
+    const hint = document.getElementById('more-hint');
+    const textarea = document.getElementById('more');
+    if (this.value === "Let's talk") {
+      optional.textContent = 'required';
+      optional.style.color = 'var(--amber)';
+      hint.textContent = "Since you selected \"Let's talk\", please share a bit about your budget expectations so I can prepare for our conversation.";
+      textarea.placeholder = 'Tell me about your budget range and anything else relevant. What are you comfortable investing to get the result you want?';
+    } else {
+      optional.textContent = 'optional';
+      optional.style.color = 'rgba(240, 237, 232, 0.25)';
+      hint.textContent = 'No need to be formal. Just be honest about where things stand.';
+      textarea.placeholder = 'Share anything else about your business, where you are now, and where you are trying to go. Content creators (YouTube, TikTok, Instagram) are welcome too. The more context you give me, the better I can assess fit.';
+    }
+  });
+
   function submitForm() {
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -467,6 +493,13 @@
     if (!name || !email || !business || !tried || !success || !budget) {
       status.textContent = 'Please fill out all required fields.';
       status.style.color = 'rgba(240,237,232,0.5)';
+      return;
+    }
+
+    if (budget === "Let's talk" && !more) {
+      status.textContent = 'Please tell me a bit about your budget in the field below.';
+      status.style.color = 'rgba(240,237,232,0.5)';
+      document.getElementById('more').focus();
       return;
     }
 
