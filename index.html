@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chris O'Connors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F0EDE8;
+    --amber: #B8732A;
+    --muted: rgba(240, 237, 232, 0.55);
+    --rule: rgba(240, 237, 232, 0.08);
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    background: #0E0E0E;
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    padding: 0 2rem;
+  }
+
+  .container {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 5rem 0 6rem;
+  }
+
+  /* SECTION SPACING */
+  section { margin-bottom: 5rem; }
+
+  /* EYEBROW */
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.5rem;
+  }
+
+  /* HERO */
+  .hero { margin-bottom: 5rem; }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.6rem, 8vw, 3.6rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 2rem;
+  }
+
+  .animated-rule {
+    height: 1px;
+    background: var(--amber);
+    width: 0;
+    animation: drawRule 1s ease forwards 0.3s;
+    margin-bottom: 2rem;
+  }
+
+  .proposition {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 4vw, 1.35rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(240, 237, 232, 0.72);
+    line-height: 1.65;
+  }
+
+  /* SECTION HEADINGS */
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  /* BODY COPY */
+  p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  /* FIT LIST */
+  .fit-list {
+    list-style: none;
+    margin-top: 1.25rem;
+  }
+
+  .fit-list li {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    padding: 0.75rem 0;
+    border-bottom: 0.5px solid var(--rule);
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+  }
+
+  .fit-list li:first-child { border-top: 0.5px solid var(--rule); }
+
+  .fit-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--amber);
+    opacity: 0.6;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  /* PROCESS */
+  .process-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 0.5px solid var(--rule);
+  }
+
+  .process-item:first-child { border-top: 0.5px solid var(--rule); }
+
+  .process-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 400;
+    min-width: 60px;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .process-text {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* PRICING */
+  .pricing-note {
+    font-size: 13px;
+    color: rgba(240, 237, 232, 0.35);
+    line-height: 1.65;
+    margin-top: 1.25rem;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  /* FORM */
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    background: rgba(240, 237, 232, 0.04);
+    border: 0.5px solid rgba(240, 237, 232, 0.15);
+    border-radius: 4px;
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+    -webkit-appearance: none;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--amber);
+  }
+
+  select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C8A96E' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  select option { background: #1a1a1a; color: var(--cream); }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.65;
+  }
+
+  ::placeholder { color: rgba(240, 237, 232, 0.2); }
+
+  .optional-label {
+    font-size: 10px;
+    color: rgba(240, 237, 232, 0.25);
+    letter-spacing: 0.05em;
+    margin-left: 0.5rem;
+    text-transform: none;
+    font-style: italic;
+  }
+
+  .textarea-hint {
+    font-size: 11px;
+    color: rgba(240, 237, 232, 0.25);
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background: transparent;
+    border: 0.5px solid var(--amber);
+    border-radius: 4px;
+    color: var(--amber);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    margin-top: 0.5rem;
+  }
+
+  .submit-btn:hover {
+    background: var(--amber);
+    color: #0E0E0E;
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .form-status {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 1rem;
+    min-height: 1.2em;
+    color: var(--amber);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  /* FOOTER */
+  .footer {
+    border-top: 0.5px solid var(--rule);
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer a {
+    font-size: 12px;
+    color: rgba(240, 237, 232, 0.3);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer a:hover { color: var(--amber); }
+
+  /* ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes drawRule {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, .fade-in { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+  }
+
+  .hero-photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    margin-bottom: 1.75rem;
+    opacity: 0.9;
+    display: block;
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 0 1.25rem; }
+    .container { padding: 3.5rem 0 4rem; }
+  }
+</style>
+</head>
+<body>
+<main class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="https://res.cloudinary.com/dfg6a5max/image/upload/v1781449372/Web_Assets/CO_-_Profile_Pic/2026_Profile_Pic_cfqlxw.png" alt="Chris O'Connors" class="hero-photo">
+    <p class="eyebrow">Digital Marketing · California</p>
+    <h1>Chris<br>O'Connors</h1>
+    <div class="animated-rule"></div>
+    <p class="proposition">I get businesses from where they are<br>to where they want to be.</p>
+  </div>
+
+  <!-- WHAT I DO -->
+  <section class="fade-in">
+    <p class="eyebrow">What I do</p>
+    <h2>You have a goal. I build the path.</h2>
+    <p>I connect businesses to the right channels, tools, and partners. Then I make it work. Whether that's SEO, paid media, content, distribution, or something else entirely depends on your situation.</p>
+    <p>I am not a one-size-fits-all agency. I look at what you actually need and put the right solution in place. Sometimes that means I execute directly. Sometimes I bring in the right partner. You get the result either way.</p>
+  </section>
+
+  <!-- ARE WE A FIT -->
+  <section class="fade-in">
+    <p class="eyebrow">Are we a fit</p>
+    <h2>Great work comes from great partnerships.</h2>
+    <p>I work best with people and operations who are skilled at what they do and are ready to move.</p>
+    <ul class="fit-list">
+      <li><span class="fit-dot" aria-hidden="true"></span>You have a product or service with real demand.</li>
+      <li><span class="fit-dot" aria-hidden="true"></span>You are not getting the online traction you know you should.</li>
+      <li><span class="fit-dot" aria-hidden="true"></span>You have tried things before and want someone who can cut through the noise.</li>
+      <li><span class="fit-dot" aria-hidden="true"></span>You care about outcomes, not activity reports.</li>
+      <li><span class="fit-dot" aria-hidden="true"></span>You are ready to invest in what works.</li>
+    </ul>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="fade-in">
+    <p class="eyebrow">How it works</p>
+    <h2>Three steps.</h2>
+    <div>
+      <div class="process-item">
+        <span class="process-label">Analyze</span>
+        <span class="process-text">We look at your goals and where your leverage is.</span>
+      </div>
+      <div class="process-item">
+        <span class="process-label">Build</span>
+        <span class="process-text">We put the right solution in place. The tools and partners depend on your situation.</span>
+      </div>
+      <div class="process-item">
+        <span class="process-label">Launch</span>
+        <span class="process-text">We execute. We measure what matters. We move toward the outcome.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="fade-in">
+    <p class="eyebrow">Pricing</p>
+    <h2>Scoped to what you need.</h2>
+    <p>There is no standard package. Pricing depends on the scope of work, the timeline, and what it takes to get you the result.</p>
+    <p>Some engagements are retainer-based. Some are commission-based. Some are a hybrid. We figure out what makes sense after we talk.</p>
+    <p class="pricing-note">The first conversation is free. If we are a fit, we will know quickly.</p>
+  </section>
+
+  <!-- FORM -->
+  <section class="fade-in">
+    <p class="eyebrow">Work with me</p>
+    <h2>Tell me about your situation.</h2>
+    <p>Fill this out and I will get back to you within one business day.</p>
+
+    <div id="form-wrap" style="margin-top: 2rem;">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="your@email.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="business">What is your business and what do you sell?</label>
+        <input type="text" id="business" placeholder="e.g. SaaS tool for small contractors">
+      </div>
+      <div class="form-group">
+        <label for="tried">What have you already tried?</label>
+        <input type="text" id="tried" placeholder="e.g. Google Ads, SEO agency, social media">
+      </div>
+      <div class="form-group">
+        <label for="success">What does success look like for you?</label>
+        <input type="text" id="success" placeholder="e.g. 50 qualified leads per month">
+      </div>
+      <div class="form-group">
+        <label for="budget">Budget range</label>
+        <select id="budget">
+          <option value="" disabled selected>Select a range</option>
+          <option value="Under $1,000">Under $1,000</option>
+          <option value="$1,000 to $5,000">$1,000 to $5,000</option>
+          <option value="$5,000 to $10,000">$5,000 to $10,000</option>
+          <option value="$10,000+">$10,000+</option>
+          <option value="Let's talk">Let's talk</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="more">Tell me more <span class="optional-label">optional</span></label>
+        <textarea id="more" placeholder="Share anything else about your business, where you are now, and where you are trying to go. The more context you give me, the better I can assess fit."></textarea>
+        <p class="textarea-hint">No need to be formal. Just be honest about where things stand.</p>
+      </div>
+      <button class="submit-btn" id="submit-btn" onclick="submitForm()">Send it</button>
+      <p class="form-status" id="form-status"></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <a href="mailto:chris@chrisoconnors.com">chris@chrisoconnors.com</a>
+    <a href="tel:9165462589">916-546-2589</a>
+  </div>
+
+</main>
+
+<script>
+  const WEBHOOK_URL = 'YOUR_N8N_WEBHOOK_URL_HERE';
+
+  function submitForm() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const business = document.getElementById('business').value.trim();
+    const tried = document.getElementById('tried').value.trim();
+    const success = document.getElementById('success').value.trim();
+    const budget = document.getElementById('budget').value;
+    const more = document.getElementById('more').value.trim();
+    const status = document.getElementById('form-status');
+    const btn = document.getElementById('submit-btn');
+
+    if (!name || !email || !business || !tried || !success || !budget) {
+      status.textContent = 'Please fill out all required fields.';
+      status.style.color = 'rgba(240,237,232,0.5)';
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      status.textContent = 'Please enter a valid email address.';
+      status.style.color = 'rgba(240,237,232,0.5)';
+      return;
+    }
+
+    btn.disabled = true;
+    status.style.color = 'var(--amber)';
+    status.textContent = 'Sending...';
+
+    const payload = {
+      name,
+      email,
+      business,
+      tried,
+      success,
+      budget,
+      more,
+      submitted_at: new Date().toISOString()
+    };
+
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(res => {
+      if (res.ok) {
+        document.getElementById('form-wrap').innerHTML = '<p style="font-family: Cormorant Garamond, serif; font-size: 1.2rem; font-style: italic; color: rgba(240,237,232,0.7); line-height: 1.7;">Got it. I will be in touch within one business day.</p>';
+      } else {
+        throw new Error('Non-200 response');
+      }
+    })
+    .catch(() => {
+      btn.disabled = false;
+      status.textContent = 'Something went wrong. Try emailing me directly.';
+      status.style.color = 'rgba(240,237,232,0.5)';
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
