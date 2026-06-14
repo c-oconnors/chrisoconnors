@@ -7,7 +7,7 @@
 <meta name="description" content="Digital marketing. I connect businesses to the right channels, tools, and partners and get them to where they want to be.">
 <meta property="og:title" content="Chris O'Connors">
 <meta property="og:description" content="Digital marketing. I connect businesses to the right channels, tools, and partners and get them to where they want to be.">
-<meta property="og:image" content="https://res.cloudinary.com/dfg6a5max/image/upload/v1781449372/Web_Assets/CO_-_Profile_Pic/2026_Profile_Pic_cfqlxw.png">
+<meta property="og:image" content="https://res.cloudinary.com/dfg6a5max/image/upload/v1781449372/web-assets/2026_Profile_Pic_cfqlxw.png">
 <meta property="og:url" content="https://www.chrisoconnors.com">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
@@ -214,13 +214,15 @@
 
   select {
     cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C8A96E' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B8732A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     padding-right: 2.5rem;
+    color: var(--cream);
   }
 
-  select option { background: #1a1a1a; color: var(--cream); }
+  select:invalid { color: rgba(240, 237, 232, 0.2); }
+  select option { background: #0E0E0E; color: var(--cream); }
 
   textarea {
     resize: vertical;
@@ -338,6 +340,87 @@
     body { padding: 0 1.25rem; }
     .container { padding: 3.5rem 0 4rem; }
   }
+
+  /* CUSTOM SELECT */
+  .custom-select {
+    position: relative;
+    user-select: none;
+  }
+
+  .custom-select-trigger {
+    width: 100%;
+    background: rgba(240, 237, 232, 0.04);
+    border: 0.5px solid rgba(240, 237, 232, 0.15);
+    border-radius: 4px;
+    color: rgba(240, 237, 232, 0.2);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: border-color 0.2s ease;
+  }
+
+  .custom-select-trigger.has-value {
+    color: var(--cream);
+  }
+
+  .custom-select.open .custom-select-trigger {
+    border-color: var(--amber);
+  }
+
+  .select-arrow {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .custom-select.open .select-arrow {
+    transform: rotate(180deg);
+  }
+
+  .custom-select-options {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #161616;
+    border: 0.5px solid rgba(240, 237, 232, 0.15);
+    border-radius: 4px;
+    list-style: none;
+    z-index: 100;
+    overflow: hidden;
+  }
+
+  .custom-select.open .custom-select-options {
+    display: block;
+  }
+
+  .custom-select-options li {
+    padding: 0.75rem 1rem;
+    font-size: 14px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+    border-bottom: 0.5px solid rgba(240, 237, 232, 0.05);
+  }
+
+  .custom-select-options li:last-child {
+    border-bottom: none;
+  }
+
+  .custom-select-options li:hover {
+    background: rgba(184, 115, 42, 0.1);
+    color: var(--cream);
+  }
+
+  .custom-select-options li.selected {
+    color: var(--amber);
+  }
+
 </style>
 </head>
 <body>
@@ -345,7 +428,7 @@
 
   <!-- HERO -->
   <div class="hero">
-    <img src="https://res.cloudinary.com/dfg6a5max/image/upload/v1781449372/Web_Assets/CO_-_Profile_Pic/2026_Profile_Pic_cfqlxw.png" alt="Chris O'Connors" class="hero-photo">
+    <img src="https://res.cloudinary.com/dfg6a5max/image/upload/v1781449372/web-assets/2026_Profile_Pic_cfqlxw.png" alt="Chris O'Connors" class="hero-photo">
     <p class="eyebrow">Digital Marketing · California</p>
     <h1>Chris<br>O'Connors</h1>
     <div class="animated-rule"></div>
@@ -431,15 +514,23 @@
         <input type="text" id="success" placeholder="e.g. consistently selling my high margin offer">
       </div>
       <div class="form-group">
-        <label for="budget">Budget range</label>
-        <select id="budget">
-          <option value="" disabled selected>Select a range</option>
-          <option value="Under $1,000">Under $1,000</option>
-          <option value="$1,000 to $5,000">$1,000 to $5,000</option>
-          <option value="$5,000 to $10,000">$5,000 to $10,000</option>
-          <option value="$10,000+">$10,000+</option>
-          <option value="Let's talk">Let's talk</option>
-        </select>
+        <label>Budget range</label>
+        <div class="custom-select" id="budget-select">
+          <div class="custom-select-trigger" id="budget-trigger">
+            <span id="budget-display">Select a range</span>
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="select-arrow">
+              <path d="M1 1l5 5 5-5" stroke="#B8732A" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <ul class="custom-select-options" id="budget-options">
+            <li data-value="Under $1,000">Under $1,000</li>
+            <li data-value="$1,000 to $5,000">$1,000 to $5,000</li>
+            <li data-value="$5,000 to $10,000">$5,000 to $10,000</li>
+            <li data-value="$10,000+">$10,000+</li>
+            <li data-value="Let's talk">Let's talk</li>
+          </ul>
+        </div>
+        <input type="hidden" id="budget" value="">
       </div>
       <div class="form-group">
         <label for="more">Tell me more <span class="optional-label" id="more-optional">optional</span></label>
@@ -461,23 +552,6 @@
 
 <script>
   const WEBHOOK_URL = 'YOUR_N8N_WEBHOOK_URL_HERE';
-
-  document.getElementById('budget').addEventListener('change', function() {
-    const optional = document.getElementById('more-optional');
-    const hint = document.getElementById('more-hint');
-    const textarea = document.getElementById('more');
-    if (this.value === "Let's talk") {
-      optional.textContent = 'required';
-      optional.style.color = 'var(--amber)';
-      hint.textContent = "Since you selected \"Let's talk\", please share a bit about your budget expectations so I can prepare for our conversation.";
-      textarea.placeholder = 'Tell me about your budget range and anything else relevant. What are you comfortable investing to get the result you want?';
-    } else {
-      optional.textContent = 'optional';
-      optional.style.color = 'rgba(240, 237, 232, 0.25)';
-      hint.textContent = 'No need to be formal. Just be honest about where things stand.';
-      textarea.placeholder = 'Share anything else about your business, where you are now, and where you are trying to go. Content creators (YouTube, TikTok, Instagram) are welcome too. The more context you give me, the better I can assess fit.';
-    }
-  });
 
   function submitForm() {
     const name = document.getElementById('name').value.trim();
@@ -543,6 +617,52 @@
       status.style.color = 'rgba(240,237,232,0.5)';
     });
   }
+
+
+  // Custom select
+  const trigger = document.getElementById('budget-trigger');
+  const options = document.getElementById('budget-options');
+  const selectWrap = document.getElementById('budget-select');
+  const budgetInput = document.getElementById('budget');
+  const budgetDisplay = document.getElementById('budget-display');
+
+  trigger.addEventListener('click', () => {
+    selectWrap.classList.toggle('open');
+  });
+
+  document.querySelectorAll('#budget-options li').forEach(li => {
+    li.addEventListener('click', () => {
+      const val = li.dataset.value;
+      budgetInput.value = val;
+      budgetDisplay.textContent = val;
+      trigger.classList.add('has-value');
+      document.querySelectorAll('#budget-options li').forEach(l => l.classList.remove('selected'));
+      li.classList.add('selected');
+      selectWrap.classList.remove('open');
+
+      // Trigger the budget change logic
+      const optional = document.getElementById('more-optional');
+      const hint = document.getElementById('more-hint');
+      const textarea = document.getElementById('more');
+      if (val === "Let's talk") {
+        optional.textContent = 'required';
+        optional.style.color = 'var(--amber)';
+        hint.textContent = "Since you selected \"Let's talk\", please share a bit about your budget expectations so I can prepare for our conversation.";
+        textarea.placeholder = 'Tell me about your budget range and anything else relevant. What are you comfortable investing to get the result you want?';
+      } else {
+        optional.textContent = 'optional';
+        optional.style.color = 'rgba(240, 237, 232, 0.25)';
+        hint.textContent = 'No need to be formal. Just be honest about where things stand.';
+        textarea.placeholder = 'Share anything else about your business, where you are now, and where you are trying to go. Content creators (YouTube, TikTok, Instagram) are welcome too. The more context you give me, the better I can assess fit.';
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!selectWrap.contains(e.target)) {
+      selectWrap.classList.remove('open');
+    }
+  });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
