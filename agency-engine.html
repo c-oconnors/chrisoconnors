@@ -53,17 +53,6 @@
     margin-bottom: 1.5rem;
   }
 
-  .back-link {
-    display: inline-block;
-    font-size: 12px;
-    color: rgba(240, 237, 232, 0.35);
-    text-decoration: none;
-    margin-bottom: 3rem;
-    transition: color 0.2s ease;
-  }
-
-  .back-link:hover { color: var(--amber); }
-
   .hero { margin-bottom: 5rem; }
 
   h1 {
@@ -229,90 +218,11 @@
     text-align: center;
   }
 
-  .form-group { margin-bottom: 1.25rem; }
-
-  label {
-    display: block;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--amber);
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-  }
-
-  input[type="email"] {
-    width: 100%;
-    background: rgba(240, 237, 232, 0.04);
-    border: 0.5px solid rgba(240, 237, 232, 0.15);
-    border-radius: 4px;
-    color: var(--cream);
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    padding: 0.75rem 1rem;
-    outline: none;
-    transition: border-color 0.2s ease;
-    -webkit-appearance: none;
-  }
-
-  input[type="email"]:focus { border-color: var(--amber); }
-
-  ::placeholder { color: rgba(240, 237, 232, 0.2); }
-
-  .submit-btn {
-    width: 100%;
-    padding: 0.9rem 1rem;
-    background: transparent;
-    border: 0.5px solid var(--amber);
-    border-radius: 4px;
-    color: var(--amber);
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
-    margin-top: 0.5rem;
-  }
-
-  .submit-btn:hover { background: var(--amber); color: #0E0E0E; }
-  .submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-
-  .form-status {
-    font-size: 13px;
-    text-align: center;
-    margin-top: 1rem;
-    min-height: 1.2em;
-    color: var(--amber);
-    font-style: italic;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-  }
-
-  .footer {
-    border-top: 0.5px solid var(--rule);
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .footer a {
-    font-size: 12px;
-    color: rgba(240, 237, 232, 0.3);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .footer a:hover { color: var(--amber); }
-
-  .footer .disclosure {
+  .disclosure {
     font-size: 11px;
     color: rgba(240, 237, 232, 0.2);
     line-height: 1.6;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 
   .fade-in {
@@ -338,8 +248,6 @@
 </head>
 <body>
 <main class="container">
-
-  <a href="/" class="back-link">&larr; chrisoconnors.com</a>
 
   <!-- 1. WHAT DOES IT DO FOR ME -->
   <div class="hero">
@@ -425,78 +333,15 @@
   <section class="fade-in">
     <p class="eyebrow">How do I buy</p>
     <h2>Try it before you commit to anything.</h2>
-    <p>30 days, no card required. See if it actually replaces what you're currently duct-taping together.</p>
+    <p>14 days free. Card required to start, nothing charged until the trial ends. See if it actually replaces what you're currently duct-taping together.</p>
     <a href="https://www.gohighlevel.com/pricing?fp_ref=chrisoconnors" class="cta-btn" id="primary-cta">Start the free trial</a>
     <p class="cta-micro">You're sent straight to the platform's pricing page. No call, no pitch.</p>
-  </section>
-
-  <!-- SECONDARY OFFER - EMAIL CAPTURE FOR UPHEX -->
-  <section class="fade-in">
-    <p class="eyebrow">Not ready yet</p>
-    <h2>Get the rest of the stack.</h2>
-    <p>Drop your email and I'll send you the second tool I pair with this one &mdash; plus the setup order, free.</p>
-
-    <div id="bonus-form-wrap" style="margin-top: 2rem;">
-      <div class="form-group">
-        <label for="bonus-email">Email</label>
-        <input type="email" id="bonus-email" placeholder="you@youragency.com" autocomplete="email">
-      </div>
-      <button class="submit-btn" id="bonus-submit-btn" onclick="submitBonusForm()">Send it to me</button>
-      <p class="form-status" id="bonus-form-status"></p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    <a href="mailto:chris@chrisoconnors.com">chris@chrisoconnors.com</a>
-    <a href="tel:9165462589">916-546-2589</a>
     <p class="disclosure">This page contains affiliate links. I may earn a commission if you sign up, at no extra cost to you.</p>
-  </div>
+  </section>
 
 </main>
 
 <script>
-  const BONUS_WEBHOOK_URL = 'https://n8n.chrisoconnors.com/webhook/agency-engine-lead'; // REPLACE if different
-
-  function submitBonusForm() {
-    const email = document.getElementById('bonus-email').value.trim();
-    const status = document.getElementById('bonus-form-status');
-    const btn = document.getElementById('bonus-submit-btn');
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      status.textContent = 'Please enter a valid email address.';
-      status.style.color = 'rgba(240,237,232,0.5)';
-      return;
-    }
-
-    btn.disabled = true;
-    status.style.color = 'var(--amber)';
-    status.textContent = 'Sending...';
-
-    fetch(BONUS_WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: email,
-        source: 'agency-engine',
-        submitted_at: new Date().toISOString()
-      })
-    })
-    .then(res => {
-      if (res.ok) {
-        document.getElementById('bonus-form-wrap').innerHTML = '<p style="font-family: Cormorant Garamond, serif; font-size: 1.2rem; font-style: italic; color: rgba(240,237,232,0.7); line-height: 1.7;">Done. Check your inbox in a few minutes.</p>';
-      } else {
-        throw new Error('Non-200 response');
-      }
-    })
-    .catch(() => {
-      btn.disabled = false;
-      status.textContent = 'Something went wrong. Try again in a moment.';
-      status.style.color = 'rgba(240,237,232,0.5)';
-    });
-  }
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
