@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Agency Engine | Chris O'Connors</title>
+<meta name="description" content="You're losing leads between five different tools. Here's the one system solo agency owners run on instead.">
+<meta property="og:title" content="The Agency Engine | Chris O'Connors">
+<meta property="og:description" content="You're losing leads between five different tools. Here's the one system solo agency owners run on instead.">
+<meta property="og:image" content="https://res.cloudinary.com/dfg6a5max/image/upload/v1781449372/web-assets/2026_Profile_Pic_cfqlxw.png">
+<meta property="og:url" content="https://www.chrisoconnors.com/agency-engine">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Agency Engine | Chris O'Connors">
+<meta name="twitter:description" content="You're losing leads between five different tools. Here's the one system solo agency owners run on instead.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F0EDE8;
+    --amber: #B8732A;
+    --muted: rgba(240, 237, 232, 0.55);
+    --rule: rgba(240, 237, 232, 0.08);
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    background: #0E0E0E;
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    padding: 0 2rem;
+  }
+
+  .container {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 5rem 0 6rem;
+  }
+
+  section { margin-bottom: 5rem; }
+
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.5rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 12px;
+    color: rgba(240, 237, 232, 0.35);
+    text-decoration: none;
+    margin-bottom: 3rem;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover { color: var(--amber); }
+
+  .hero { margin-bottom: 5rem; }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 7vw, 3.1rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 2rem;
+  }
+
+  .animated-rule {
+    height: 1px;
+    background: var(--amber);
+    width: 0;
+    animation: drawRule 1s ease forwards 0.3s;
+    margin-bottom: 2rem;
+  }
+
+  .proposition {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 4vw, 1.35rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(240, 237, 232, 0.72);
+    line-height: 1.65;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  .fit-list {
+    list-style: none;
+    margin-top: 1.25rem;
+  }
+
+  .fit-list li {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    padding: 0.75rem 0;
+    border-bottom: 0.5px solid var(--rule);
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+  }
+
+  .fit-list li:first-child { border-top: 0.5px solid var(--rule); }
+
+  .fit-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--amber);
+    opacity: 0.6;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .process-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 0.5px solid var(--rule);
+  }
+
+  .process-item:first-child { border-top: 0.5px solid var(--rule); }
+
+  .process-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 400;
+    min-width: 60px;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .process-text {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .pricing-note {
+    font-size: 13px;
+    color: rgba(240, 237, 232, 0.35);
+    line-height: 1.65;
+    margin-top: 1.25rem;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  .trust-row {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--rule);
+  }
+
+  .trust-stat .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--amber);
+    display: block;
+  }
+
+  .trust-stat .label {
+    font-size: 10px;
+    color: rgba(240, 237, 232, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.25rem;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem 1rem;
+    background: var(--amber);
+    border: 0.5px solid var(--amber);
+    border-radius: 4px;
+    color: #0E0E0E;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, opacity 0.2s ease;
+    margin-top: 0.5rem;
+  }
+
+  .cta-btn:hover { opacity: 0.85; }
+
+  .cta-micro {
+    font-size: 12px;
+    color: rgba(240, 237, 232, 0.3);
+    margin-top: 0.85rem;
+    text-align: center;
+  }
+
+  .form-group { margin-bottom: 1.25rem; }
+
+  label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  input[type="email"] {
+    width: 100%;
+    background: rgba(240, 237, 232, 0.04);
+    border: 0.5px solid rgba(240, 237, 232, 0.15);
+    border-radius: 4px;
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+    -webkit-appearance: none;
+  }
+
+  input[type="email"]:focus { border-color: var(--amber); }
+
+  ::placeholder { color: rgba(240, 237, 232, 0.2); }
+
+  .submit-btn {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background: transparent;
+    border: 0.5px solid var(--amber);
+    border-radius: 4px;
+    color: var(--amber);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    margin-top: 0.5rem;
+  }
+
+  .submit-btn:hover { background: var(--amber); color: #0E0E0E; }
+  .submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .form-status {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 1rem;
+    min-height: 1.2em;
+    color: var(--amber);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  .footer {
+    border-top: 0.5px solid var(--rule);
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer a {
+    font-size: 12px;
+    color: rgba(240, 237, 232, 0.3);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer a:hover { color: var(--amber); }
+
+  .footer .disclosure {
+    font-size: 11px;
+    color: rgba(240, 237, 232, 0.2);
+    line-height: 1.6;
+    margin-top: 1rem;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @keyframes drawRule { from { width: 0; } to { width: 100%; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, .fade-in { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 0 1.25rem; }
+    .container { padding: 3.5rem 0 4rem; }
+    .trust-row { gap: 1.75rem; }
+  }
+</style>
+</head>
+<body>
+<main class="container">
+
+  <a href="/" class="back-link">&larr; chrisoconnors.com</a>
+
+  <!-- 1. WHAT DOES IT DO FOR ME -->
+  <div class="hero">
+    <p class="eyebrow">For solo &amp; small agency owners</p>
+    <h1>You're losing leads between five different tools.</h1>
+    <div class="animated-rule"></div>
+    <p class="proposition">Calendly for booking. A separate inbox for email. Another app for texting clients back. One system fixes this &mdash; and it costs less than what you're paying for the five you have now.</p>
+  </div>
+
+  <!-- 2. WILL THAT WORK FOR ME -->
+  <section class="fade-in">
+    <p class="eyebrow">Will that work for me</p>
+    <h2>If this sounds familiar, keep reading.</h2>
+    <p>I run my own agency on this. I didn't go looking for a tool to sell &mdash; I went looking for a way to stop losing leads, and this is what I landed on.</p>
+    <ul class="fit-list">
+      <li><span class="fit-dot" aria-hidden="true"></span>A lead messages you on a Tuesday. You see it Thursday. They've already hired someone else.</li>
+      <li><span class="fit-dot" aria-hidden="true"></span>You're paying for a CRM, a calendar tool, an email platform, and a texting app &mdash; separately, every month.</li>
+      <li><span class="fit-dot" aria-hidden="true"></span>Nothing talks to anything else. You're the one stitching it together by hand.</li>
+      <li><span class="fit-dot" aria-hidden="true"></span>You look like a one-person operation because, tool-wise, you are one.</li>
+    </ul>
+    <p style="margin-top: 1.25rem;">This isn't a willpower problem. It's a systems problem. The fix isn't working harder at follow-up &mdash; it's removing the gaps where leads fall through in the first place.</p>
+
+    <div class="trust-row">
+      <div class="trust-stat">
+        <span class="num">500K+</span>
+        <span class="label">Agencies running on this platform</span>
+      </div>
+      <div class="trust-stat">
+        <span class="num">40%</span>
+        <span class="label">Cheaper than stacking separate tools</span>
+      </div>
+      <div class="trust-stat">
+        <span class="num">1</span>
+        <span class="label">Login instead of five</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. HOW DOES IT WORK -->
+  <section class="fade-in">
+    <p class="eyebrow">How it works</p>
+    <h2>What changes once it's one system.</h2>
+    <p>This isn't about adding more software. It's about replacing the five things you're duct-taping together with one that actually talks to itself.</p>
+    <div>
+      <div class="process-item">
+        <span class="process-label">Capture</span>
+        <span class="process-text">Every lead lands in one place &mdash; form fills, calls, texts, DMs &mdash; instead of scattered across apps you check separately.</span>
+      </div>
+      <div class="process-item">
+        <span class="process-label">Respond</span>
+        <span class="process-text">A missed call gets an instant text back. A new lead gets a same-day nudge. You stop being the bottleneck between "they reached out" and "they heard back."</span>
+      </div>
+      <div class="process-item">
+        <span class="process-label">Operate</span>
+        <span class="process-text">Booking, invoicing, and client communication run under your brand &mdash; not a patchwork of free tiers and third-party logos.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HOW MUCH DOES IT COST -->
+  <section class="fade-in">
+    <p class="eyebrow">How much does it cost</p>
+    <h2>Scoped to your stage.</h2>
+    <p>Three tiers. Most solo and small agency owners land on Unlimited &mdash; it's built for running client accounts, not just your own.</p>
+    <div>
+      <div class="process-item">
+        <span class="process-label">$97/mo</span>
+        <span class="process-text">Starter. For solo freelancers managing one business, not yet running client accounts.</span>
+      </div>
+      <div class="process-item">
+        <span class="process-label">$297/mo</span>
+        <span class="process-text">Unlimited. Unlimited sub-accounts, white-labeling, API access &mdash; built for a solo agency running multiple clients.</span>
+      </div>
+      <div class="process-item">
+        <span class="process-label">$497/mo</span>
+        <span class="process-text">SaaS Pro. For agencies ready to resell the platform itself as their own branded software.</span>
+      </div>
+    </div>
+    <p class="pricing-note">Most solo agencies are already spending close to this much across four or five logins that don't talk to each other.</p>
+  </section>
+
+  <!-- 5. HOW DO I BUY -->
+  <section class="fade-in">
+    <p class="eyebrow">How do I buy</p>
+    <h2>Try it before you commit to anything.</h2>
+    <p>30 days, no card required. See if it actually replaces what you're currently duct-taping together.</p>
+    <a href="https://www.gohighlevel.com/?fp_ref=REPLACE_WITH_AFFILIATE_ID&amp;fp_sid=agency_engine" class="cta-btn" id="primary-cta">Start the free trial</a>
+    <p class="cta-micro">You're sent straight to the platform's signup. No call, no pitch.</p>
+  </section>
+
+  <!-- SECONDARY OFFER - EMAIL CAPTURE FOR UPHEX -->
+  <section class="fade-in">
+    <p class="eyebrow">Not ready yet</p>
+    <h2>Get the rest of the stack.</h2>
+    <p>Drop your email and I'll send you the second tool I pair with this one &mdash; plus the setup order, free.</p>
+
+    <div id="bonus-form-wrap" style="margin-top: 2rem;">
+      <div class="form-group">
+        <label for="bonus-email">Email</label>
+        <input type="email" id="bonus-email" placeholder="you@youragency.com" autocomplete="email">
+      </div>
+      <button class="submit-btn" id="bonus-submit-btn" onclick="submitBonusForm()">Send it to me</button>
+      <p class="form-status" id="bonus-form-status"></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <a href="mailto:chris@chrisoconnors.com">chris@chrisoconnors.com</a>
+    <a href="tel:9165462589">916-546-2589</a>
+    <p class="disclosure">This page contains affiliate links. I may earn a commission if you sign up, at no extra cost to you.</p>
+  </div>
+
+</main>
+
+<script>
+  const BONUS_WEBHOOK_URL = 'https://n8n.chrisoconnors.com/webhook/agency-engine-lead'; // REPLACE if different
+
+  function submitBonusForm() {
+    const email = document.getElementById('bonus-email').value.trim();
+    const status = document.getElementById('bonus-form-status');
+    const btn = document.getElementById('bonus-submit-btn');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      status.textContent = 'Please enter a valid email address.';
+      status.style.color = 'rgba(240,237,232,0.5)';
+      return;
+    }
+
+    btn.disabled = true;
+    status.style.color = 'var(--amber)';
+    status.textContent = 'Sending...';
+
+    fetch(BONUS_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        source: 'agency-engine',
+        submitted_at: new Date().toISOString()
+      })
+    })
+    .then(res => {
+      if (res.ok) {
+        document.getElementById('bonus-form-wrap').innerHTML = '<p style="font-family: Cormorant Garamond, serif; font-size: 1.2rem; font-style: italic; color: rgba(240,237,232,0.7); line-height: 1.7;">Done. Check your inbox in a few minutes.</p>';
+      } else {
+        throw new Error('Non-200 response');
+      }
+    })
+    .catch(() => {
+      btn.disabled = false;
+      status.textContent = 'Something went wrong. Try again in a moment.';
+      status.style.color = 'rgba(240,237,232,0.5)';
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
