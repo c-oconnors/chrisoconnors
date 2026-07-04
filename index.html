@@ -23,7 +23,7 @@
     --cream: #F0EDE8;
     --amber: #B8732A;
     --display: 'Edit Undo Line BRK';
-    --header: 'EB Garamond';
+    --header: 'Satoshi Bold';
     --body: 'Satoshi';
     --muted: rgba(240, 237, 232, 0.55);
     --rule: rgba(240, 237, 232, 0.08);
@@ -79,7 +79,7 @@
   }
 
   .proposition {
-    font-family: 'EB Garamond', serif;
+    font-family: var(--header), serif;
     font-size: clamp(1.15rem, 4vw, 1.35rem);
     font-weight: 300;
     font-style: italic;
@@ -89,7 +89,7 @@
 
   /* SECTION HEADINGS */
   h2 {
-    font-family: 'EB Garamond', serif;
+    font-family: var(--header), serif;
     font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: 300;
     line-height: 1.1;
@@ -171,7 +171,7 @@
     line-height: 1.65;
     margin-top: 1.25rem;
     font-style: italic;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--body), serif;
     font-size: 1rem;
   }
 
@@ -258,7 +258,7 @@
     border: 0.5px solid var(--amber);
     border-radius: 4px;
     color: var(--amber);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--body), sans-serif;
     font-size: 13px;
     font-weight: 400;
     letter-spacing: 0.12em;
@@ -356,7 +356,7 @@
     border: 0.5px solid rgba(240, 237, 232, 0.15);
     border-radius: 4px;
     color: rgba(240, 237, 232, 0.2);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--body), sans-serif;
     font-size: 14px;
     font-weight: 300;
     padding: 0.75rem 2.5rem 0.75rem 1rem;
@@ -609,7 +609,7 @@
     })
     .then(res => {
       if (res.ok) {
-        document.getElementById('form-wrap').innerHTML = '<p style="font-family: Cormorant Garamond, serif; font-size: 1.2rem; font-style: italic; color: rgba(240,237,232,0.7); line-height: 1.7;">Got it. I will be in touch within one business day.</p>';
+        document.getElementById('form-wrap').innerHTML = '<p style="font-family: 'Satoshi Bold', serif; font-size: 1.2rem; font-style: italic; color: rgba(240,237,232,0.7); line-height: 1.7;">Got it. I will be in touch within one business day.</p>';
       } else {
         throw new Error('Non-200 response');
       }
