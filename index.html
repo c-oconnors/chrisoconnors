@@ -23,7 +23,7 @@
     --cream: #F0EDE8;
     --amber: #B8732A;
     --display: 'Edit Undo Line BRK';
-    --header: 'Satoshi Bold';
+    --header: 'Satoshi';
     --body: 'Satoshi';
     --muted: rgba(240, 237, 232, 0.55);
     --rule: rgba(240, 237, 232, 0.08);
@@ -609,7 +609,7 @@
     })
     .then(res => {
       if (res.ok) {
-        document.getElementById('form-wrap').innerHTML = '<p style="font-family: Satoshi Bold, serif; font-size: 1.2rem; font-style: italic; color: rgba(240,237,232,0.7); line-height: 1.7;">Got it. I will be in touch within one business day.</p>';
+        document.getElementById('form-wrap').innerHTML = '<p style="font-family: Satoshi, serif; font-size: 1.2rem; font-style: italic; color: rgba(240,237,232,0.7); line-height: 1.7;">Got it. I will be in touch within one business day.</p>';
       } else {
         throw new Error('Non-200 response');
       }
