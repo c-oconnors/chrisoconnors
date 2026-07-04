@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chris O'Connors — For Credentialed Private Practices</title>
+<meta name="description" content="A productized SEO and AIO foundation for credentialed, out-of-network psychotherapists. Get found by the patients already looking for you.">
+<meta property="og:title" content="For Credentialed Private Practices — Chris O'Connors">
+<meta property="og:description" content="A productized SEO and AIO foundation for credentialed, out-of-network psychotherapists. Get found by the patients already looking for you.">
+<meta property="og:image" content="https://res.cloudinary.com/dfg6a5max/image/upload/v1781449372/web-assets/2026_Profile_Pic_cfqlxw.png">
+<meta property="og:url" content="https://www.chrisoconnors.com/therapists">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="For Credentialed Private Practices — Chris O'Connors">
+<meta name="twitter:description" content="A productized SEO and AIO foundation for credentialed, out-of-network psychotherapists.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F0EDE8;
+    --amber: #B8732A;
+    --muted: rgba(240, 237, 232, 0.55);
+    --rule: rgba(240, 237, 232, 0.08);
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    background: #0E0E0E;
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    padding: 0 2rem;
+  }
+
+  .container {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 5rem 0 6rem;
+  }
+
+  section { margin-bottom: 5rem; }
+
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero { margin-bottom: 5rem; }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.6rem, 8vw, 3.6rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 2rem;
+  }
+
+  .animated-rule {
+    height: 1px;
+    background: var(--amber);
+    width: 0;
+    animation: drawRule 1s ease forwards 0.3s;
+    margin-bottom: 2rem;
+  }
+
+  @keyframes drawRule { to { width: 60px; } }
+
+  .proposition {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 4vw, 1.35rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(240, 237, 232, 0.72);
+    line-height: 1.65;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  .fit-list {
+    list-style: none;
+    margin-top: 1.25rem;
+  }
+
+  .fit-list li {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    padding: 0.75rem 0;
+    border-bottom: 0.5px solid var(--rule);
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+  }
+
+  .fit-list li:first-child { border-top: 0.5px solid var(--rule); }
+
+  .fit-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--amber);
+    opacity: 0.6;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .fit-not {
+    margin-top: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(240, 237, 232, 0.4);
+    line-height: 1.65;
+  }
+
+  .process-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 0.5px solid var(--rule);
+  }
+
+  .process-item:first-child { border-top: 0.5px solid var(--rule); }
+
+  .process-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 400;
+    min-width: 90px;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .process-text {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .case-study {
+    padding: 2rem 0 0.5rem;
+    border-top: 0.5px solid var(--rule);
+    border-bottom: 0.5px solid var(--rule);
+    margin-top: 1.5rem;
+  }
+
+  .case-study .quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.55;
+    color: rgba(240, 237, 232, 0.85);
+    margin-bottom: 1.5rem;
+  }
+
+  .case-study .attribution {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    padding-bottom: 1.5rem;
+  }
+
+  .case-study .attribution strong {
+    color: var(--cream);
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .pricing-card {
+    border-top: 0.5px solid var(--rule);
+    border-bottom: 0.5px solid var(--rule);
+    padding: 1.5rem 0;
+    margin-top: 1.25rem;
+  }
+
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.65rem 0;
+  }
+
+  .price-label {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  .price-figure {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+  }
+
+  .price-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(240, 237, 232, 0.4);
+    line-height: 1.65;
+    margin-top: 1.25rem;
+  }
+
+  .async-note {
+    background: rgba(184, 115, 42, 0.06);
+    border-left: 2px solid var(--amber);
+    padding: 1.25rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .async-note p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(240, 237, 232, 0.75);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .cta-block { margin-top: 2rem; }
+
+  .cta-btn {
+    display: block;
+    width: 100%;
+    background: var(--amber);
+    color: #0E0E0E;
+    border: none;
+    padding: 1.15rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .cta-btn:hover { opacity: 0.88; }
+
+  .cta-alt {
+    display: block;
+    text-align: center;
+    margin-top: 1.25rem;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+
+  .cta-alt:hover { color: var(--amber); }
+  .cta-alt u { text-decoration-color: var(--amber); text-underline-offset: 3px; }
+
+  .form-group { margin-bottom: 1.25rem; }
+
+  label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  textarea {
+    width: 100%;
+    background: rgba(240, 237, 232, 0.04);
+    border: 0.5px solid rgba(240, 237, 232, 0.15);
+    border-radius: 4px;
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+    -webkit-appearance: none;
+  }
+
+  input:focus, textarea:focus { border-color: var(--amber); }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.65;
+  }
+
+  .submit-btn {
+    background: transparent;
+    color: var(--cream);
+    border: 0.5px solid var(--amber);
+    padding: 0.85rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    width: 100%;
+  }
+
+  .submit-btn:hover { background: var(--amber); color: #0E0E0E; }
+  .submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .form-status {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 1rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  #inquiry-form { display: none; margin-top: 2rem; }
+  #inquiry-form.open { display: block; }
+
+  .footer {
+    text-align: center;
+    padding-top: 3rem;
+    font-size: 12px;
+    color: rgba(240, 237, 232, 0.3);
+    letter-spacing: 0.05em;
+  }
+
+  .footer a {
+    color: rgba(240, 237, 232, 0.55);
+    text-decoration: none;
+    margin: 0 0.75rem;
+  }
+
+  .footer a:hover { color: var(--amber); }
+
+  .footer .home-link {
+    display: block;
+    margin-top: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<main class="container">
+
+  <!-- HERO — What does it do for me -->
+  <section class="hero">
+    <p class="eyebrow">For credentialed private practices</p>
+    <h1>Get found by the patients already looking for you.</h1>
+    <div class="animated-rule"></div>
+    <p class="proposition">A productized SEO and AIO foundation built for out-of-network psychotherapists who want to fill capacity without becoming marketers.</p>
+  </section>
+
+  <!-- WILL THAT WORK FOR ME -->
+  <section class="fade-in">
+    <p class="eyebrow">Will this work for you</p>
+    <h2>A good fit looks like this.</h2>
+    <ul class="fit-list">
+      <li><span class="fit-dot" aria-hidden="true"></span>You are credentialed and specialized. Your training is the reason patients seek you out.</li>
+      <li><span class="fit-dot" aria-hidden="true"></span>You are out-of-network. You do not want insurance mill referrals.</li>
+      <li><span class="fit-dot" aria-hidden="true"></span>You have a real clinical voice. Your website should sound like you, not like every other therapy site.</li>
+      <li><span class="fit-dot" aria-hidden="true"></span>You want your practice full. Consistent inquiries from patients who already want to work with you.</li>
+      <li><span class="fit-dot" aria-hidden="true"></span>You value your time. You would rather focus on patients than on marketing calls.</li>
+    </ul>
+    <p class="fit-not">Not a fit if you want weekly strategy calls, custom builds, or someone to hand-hold you through the work.</p>
+  </section>
+
+  <!-- HOW DOES IT WORK -->
+  <section class="fade-in">
+    <p class="eyebrow">How it works</p>
+    <h2>Foundation. Presence. Onward.</h2>
+    <div>
+      <div class="process-item">
+        <span class="process-label">Foundation</span>
+        <span class="process-text">Your site, schema, GBP, and citations get rebuilt around who you actually are and who you want to reach. One-time setup, done properly.</span>
+      </div>
+      <div class="process-item">
+        <span class="process-label">Presence</span>
+        <span class="process-text">SEO and AIO compound underneath. Search shows you. AI answers cite you. Your content ranks against the practices you actually compete with.</span>
+      </div>
+      <div class="process-item">
+        <span class="process-label">Onward</span>
+        <span class="process-text">Google Ads carry near-term inquiries while the SEO builds. Reports arrive on the same day each month. You focus on patients.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY — anchors "how does it work" with proof -->
+  <section class="fade-in">
+    <p class="eyebrow">Proof</p>
+    <h2>Douglas filled his practice.</h2>
+    <div class="case-study">
+      <p class="quote">"[Testimonial pending Douglas's approval. Placeholder for a two-line quote about reaching capacity through the SEO/AIO work.]"</p>
+      <p class="attribution"><strong>Douglas Zimmerman, MA Ed, LCSW-R</strong><br>Manhattan private practice. 25+ years. BTTI Harvard, KAP-certified, Columbia and NYU trained.</p>
+    </div>
+    <p style="margin-top: 1.25rem;">Six months of foundation and presence work. Full practice. Referrals compounding. That is what this looks like when it fits.</p>
+  </section>
+
+  <!-- HOW MUCH DOES IT COST -->
+  <section class="fade-in">
+    <p class="eyebrow">Pricing</p>
+    <h2>One number for setup. One for ongoing.</h2>
+    <div class="pricing-card">
+      <div class="price-row">
+        <span class="price-label">Foundation setup, one-time</span>
+        <span class="price-figure">$2,500</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">Monthly, ongoing</span>
+        <span class="price-figure">$1,000</span>
+      </div>
+    </div>
+    <p class="price-note">Ad spend stays on your card, separate and yours to control. No hidden fees. No proposals.</p>
+    <div class="async-note">
+      <p>Async by default. No standing calls, no weekly meetings. Monthly report on the same date every month. Questions by email, answered within one business day. Same reason you do not take walk-ins.</p>
+    </div>
+  </section>
+
+  <!-- HOW DO I BUY -->
+  <section class="fade-in">
+    <p class="eyebrow">Get started</p>
+    <h2>Two ways in.</h2>
+    <p>Ready to move: pay the foundation setup and I will onboard you the same week. Not sure yet: send a note and I will answer any questions.</p>
+
+    <div class="cta-block">
+      <!-- SWAP THIS href WITH REAL STRIPE CHECKOUT URL BEFORE LAUNCH -->
+      <a href="#" class="cta-btn" id="checkout-btn">Pay setup fee — $2,500</a>
+      <a class="cta-alt" id="show-form-btn"><u>Have questions first? Send me a note.</u></a>
+    </div>
+
+    <div id="inquiry-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="your@email.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="practice">Practice website</label>
+        <input type="url" id="practice" placeholder="https://yourpractice.com">
+      </div>
+      <div class="form-group">
+        <label for="context">What is on your mind?</label>
+        <textarea id="context" placeholder="Where your practice is now and what you are trying to fix. Keep it short."></textarea>
+      </div>
+      <button class="submit-btn" id="submit-btn" onclick="submitInquiry()">Send it</button>
+      <p class="form-status" id="form-status"></p>
+    </div>
+  </section>
+
+  <div class="footer">
+    <a href="mailto:chris@chrisoconnors.com">chris@chrisoconnors.com</a>
+    <a href="tel:9165462589">916-546-2589</a>
+    <a href="/" class="home-link">Chris O'Connors, generally</a>
+  </div>
+
+</main>
+
+<script>
+  const WEBHOOK_URL = 'https://n8n.chrisoconnors.com/webhook/website-lead';
+
+  document.getElementById('show-form-btn').addEventListener('click', () => {
+    document.getElementById('inquiry-form').classList.add('open');
+    document.getElementById('inquiry-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  function submitInquiry() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const practice = document.getElementById('practice').value.trim();
+    const context = document.getElementById('context').value.trim();
+    const status = document.getElementById('form-status');
+    const btn = document.getElementById('submit-btn');
+
+    if (!name || !email || !context) {
+      status.textContent = 'Please fill in name, email, and context.';
+      status.style.color = 'rgba(240,237,232,0.5)';
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      status.textContent = 'Please enter a valid email address.';
+      status.style.color = 'rgba(240,237,232,0.5)';
+      return;
+    }
+
+    btn.disabled = true;
+    status.style.color = 'var(--amber)';
+    status.textContent = 'Sending...';
+
+    const payload = {
+      source: 'therapists-lp',
+      name,
+      email,
+      business: 'Private psychotherapy practice',
+      tried: 'N/A — therapist LP inquiry',
+      success: 'Fill practice with fit-right patients',
+      budget: '$2,500 setup + $1,000/mo',
+      more: `Practice site: ${practice || 'not provided'}\n\n${context}`,
+      submitted_at: new Date().toISOString()
+    };
+
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(res => {
+      if (res.ok) {
+        document.getElementById('inquiry-form').innerHTML = '<p style="font-family: Cormorant Garamond, serif; font-size: 1.2rem; font-style: italic; color: rgba(240,237,232,0.7); line-height: 1.7; text-align: center; padding: 1.5rem 0;">Got it. I will be in touch within one business day.</p>';
+      } else {
+        throw new Error('Non-200 response');
+      }
+    })
+    .catch(() => {
+      btn.disabled = false;
+      status.textContent = 'Something went wrong. Try emailing me directly.';
+      status.style.color = 'rgba(240,237,232,0.5)';
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
