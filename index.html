@@ -15,418 +15,12 @@
 <meta name="twitter:description" content="Digital marketing. I connect businesses to the right channels, tools, and partners and get them to where they want to be.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --cream: #F0EDE8;
-    --amber: #B8732A;
-    --display: 'Edit Undo Line BRK';
-    --header: 'Satoshi';
-    --body: 'Satoshi';
-    --muted: rgba(240, 237, 232, 0.55);
-    --rule: rgba(240, 237, 232, 0.08);
-  }
-
-  html { font-size: 16px; scroll-behavior: smooth; }
-
-  body {
-    background: #0E0E0E;
-    color: var(--cream);
-    font-family: var(--body), sans-serif;
-    font-weight: 300;
-    padding: 0 2rem;
-  }
-
-  .container {
-    max-width: 520px;
-    margin: 0 auto;
-    padding: 5rem 0 6rem;
-  }
-
-  /* SECTION SPACING */
-  section { margin-bottom: 5rem; }
-
-  /* EYEBROW */
-  .eyebrow {
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 1.5rem;
-  }
-
-  /* HERO */
-  .hero { margin-bottom: 5rem; }
-
-  h1 {
-    font-family: 'Edit Undo Line BRK', serif;
-    font-size: clamp(2.6rem, 8vw, 3.6rem);
-    font-weight: 300;
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    margin-bottom: 2rem;
-  }
-
-  .animated-rule {
-    height: 1px;
-    background: var(--amber);
-    width: 0;
-    animation: drawRule 1s ease forwards 0.3s;
-    margin-bottom: 2rem;
-  }
-
-  .proposition {
-    font-family: var(--header), serif;
-    font-size: clamp(1.15rem, 4vw, 1.35rem);
-    font-weight: 300;
-    font-style: italic;
-    color: rgba(240, 237, 232, 0.72);
-    line-height: 1.65;
-  }
-
-  /* SECTION HEADINGS */
-  h2 {
-    font-family: var(--header), serif;
-    font-size: clamp(1.5rem, 5vw, 2rem);
-    font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-  }
-
-  /* BODY COPY */
-  p {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.75;
-    margin-bottom: 1rem;
-  }
-
-  p:last-child { margin-bottom: 0; }
-
-  /* FIT LIST */
-  .fit-list {
-    list-style: none;
-    margin-top: 1.25rem;
-  }
-
-  .fit-list li {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.6;
-    padding: 0.75rem 0;
-    border-bottom: 0.5px solid var(--rule);
-    display: flex;
-    gap: 0.85rem;
-    align-items: flex-start;
-  }
-
-  .fit-list li:first-child { border-top: 0.5px solid var(--rule); }
-
-  .fit-dot {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--amber);
-    opacity: 0.6;
-    flex-shrink: 0;
-    margin-top: 7px;
-  }
-
-  /* PROCESS */
-  .process-item {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-    padding: 1rem 0;
-    border-bottom: 0.5px solid var(--rule);
-  }
-
-  .process-item:first-child { border-top: 0.5px solid var(--rule); }
-
-  .process-label {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--amber);
-    font-weight: 400;
-    min-width: 60px;
-    padding-top: 2px;
-    flex-shrink: 0;
-  }
-
-  .process-text {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.65;
-    font-weight: 300;
-  }
-
-  /* PRICING */
-  .pricing-note {
-    font-size: 13px;
-    color: rgba(240, 237, 232, 0.35);
-    line-height: 1.65;
-    margin-top: 1.25rem;
-    font-style: italic;
-    font-family: var(--body), serif;
-    font-size: 1rem;
-  }
-
-  /* FORM */
-  .form-group {
-    margin-bottom: 1.25rem;
-  }
-
-  label {
-    display: block;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--amber);
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  select,
-  textarea {
-    width: 100%;
-    background: rgba(240, 237, 232, 0.04);
-    border: 0.5px solid rgba(240, 237, 232, 0.15);
-    border-radius: 4px;
-    color: var(--cream);
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    padding: 0.75rem 1rem;
-    outline: none;
-    transition: border-color 0.2s ease;
-    -webkit-appearance: none;
-  }
-
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  select:focus,
-  textarea:focus {
-    border-color: var(--amber);
-  }
-
-  select {
-    cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B8732A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    padding-right: 2.5rem;
-    color: var(--cream);
-  }
-
-  select:invalid { color: rgba(240, 237, 232, 0.2); }
-  select option { background: #0E0E0E; color: var(--cream); }
-
-  textarea {
-    resize: vertical;
-    min-height: 120px;
-    line-height: 1.65;
-  }
-
-  ::placeholder { color: rgba(240, 237, 232, 0.2); }
-
-  .optional-label {
-    font-size: 10px;
-    color: rgba(240, 237, 232, 0.25);
-    letter-spacing: 0.05em;
-    margin-left: 0.5rem;
-    text-transform: none;
-    font-style: italic;
-  }
-
-  .textarea-hint {
-    font-size: 11px;
-    color: rgba(240, 237, 232, 0.25);
-    margin-top: 0.4rem;
-    line-height: 1.5;
-  }
-
-  .submit-btn {
-    width: 100%;
-    padding: 0.9rem 1rem;
-    background: transparent;
-    border: 0.5px solid var(--amber);
-    border-radius: 4px;
-    color: var(--amber);
-    font-family: var(--body), sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
-    margin-top: 0.5rem;
-  }
-
-  .submit-btn:hover {
-    background: var(--amber);
-    color: #0E0E0E;
-  }
-
-  .submit-btn:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-
-  .form-status {
-    font-size: 13px;
-    text-align: center;
-    margin-top: 1rem;
-    min-height: 1.2em;
-    color: var(--amber);
-    font-style: italic;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-  }
-
-  /* FOOTER */
-  .footer {
-    border-top: 0.5px solid var(--rule);
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .footer a {
-    font-size: 12px;
-    color: rgba(240, 237, 232, 0.3);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .footer a:hover { color: var(--amber); }
-
-  /* ANIMATIONS */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @keyframes drawRule {
-    from { width: 0; }
-    to { width: 100%; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, .fade-in { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
-  }
-
-  .hero-photo {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center top;
-    margin-bottom: 1.75rem;
-    opacity: 0.9;
-    display: block;
-  }
-
-  @media (max-width: 480px) {
-    body { padding: 0 1.25rem; }
-    .container { padding: 3.5rem 0 4rem; }
-  }
-
-  /* CUSTOM SELECT */
-  .custom-select {
-    position: relative;
-    user-select: none;
-  }
-
-  .custom-select-trigger {
-    width: 100%;
-    background: rgba(240, 237, 232, 0.04);
-    border: 0.5px solid rgba(240, 237, 232, 0.15);
-    border-radius: 4px;
-    color: rgba(240, 237, 232, 0.2);
-    font-family: var(--body), sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    padding: 0.75rem 2.5rem 0.75rem 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: border-color 0.2s ease;
-  }
-
-  .custom-select-trigger.has-value {
-    color: var(--cream);
-  }
-
-  .custom-select.open .custom-select-trigger {
-    border-color: var(--amber);
-  }
-
-  .select-arrow {
-    flex-shrink: 0;
-    transition: transform 0.2s ease;
-  }
-
-  .custom-select.open .select-arrow {
-    transform: rotate(180deg);
-  }
-
-  .custom-select-options {
-    display: none;
-    position: absolute;
-    top: calc(100% + 4px);
-    left: 0;
-    right: 0;
-    background: #161616;
-    border: 0.5px solid rgba(240, 237, 232, 0.15);
-    border-radius: 4px;
-    list-style: none;
-    z-index: 100;
-    overflow: hidden;
-  }
-
-  .custom-select.open .custom-select-options {
-    display: block;
-  }
-
-  .custom-select-options li {
-    padding: 0.75rem 1rem;
-    font-size: 14px;
-    color: var(--muted);
-    cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease;
-    border-bottom: 0.5px solid rgba(240, 237, 232, 0.05);
-  }
-
-  .custom-select-options li:last-child {
-    border-bottom: none;
-  }
-
-  .custom-select-options li:hover {
-    background: rgba(184, 115, 42, 0.1);
-    color: var(--cream);
-  }
-
-  .custom-select-options li.selected {
-    color: var(--amber);
-  }
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-home">
 <main class="container">
 
   <!-- HERO -->
@@ -480,6 +74,33 @@
     </div>
   </section>
 
+  <!-- PROOF -->
+  <section class="fade-in">
+    <p class="eyebrow">Proof</p>
+    <h2>What people say after working together.</h2>
+    <div class="testimonial">
+      <p class="quote">"I love Chris! He is creative. He is organized. He will get it done. I can't say enough good things about him!"</p>
+      <div class="testimonial-author">
+        <img src="https://res.cloudinary.com/dfg6a5max/image/upload/v1783805175/web-assets/dz-img_2x_ahscmz.webp" alt="Douglas Zimmerman" class="testimonial-photo">
+        <p class="attribution"><strong>Douglas Zimmerman</strong><br>MA Ed, LCSW-R</p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <p class="quote">"If I could pick one word to define Chris professionally it would need to be one that reflected: efficiency, diligence, integrity, consummate professionalism, straight shooter, and a pleasure to work with. He is in fact all of the above. I look forward to continuing to work with Chris on any endeavor."</p>
+      <div class="testimonial-author">
+        <img src="https://res.cloudinary.com/dfg6a5max/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1783804830/web-assets/1692889884814_zynw4v.jpg" alt="Chris Brama" class="testimonial-photo">
+        <p class="attribution"><strong>Chris Brama</strong><br>VP of Sales</p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <p class="quote">"It was important that I find someone good to work with and good with communication. Everything was as promised. My client is very happy with the end result."</p>
+      <div class="testimonial-author">
+        <img src="https://res.cloudinary.com/dfg6a5max/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1783804916/web-assets/1701470084466_dtqlbx.jpg" alt="Gwen Gulick" class="testimonial-photo">
+        <p class="attribution"><strong>Gwen Gulick</strong><br>Founder, Quick Step Communications, LLC</p>
+      </div>
+    </div>
+  </section>
+
   <!-- PRICING -->
   <section class="fade-in">
     <p class="eyebrow">Pricing</p>
@@ -495,7 +116,7 @@
     <h2>Tell me about your situation.</h2>
     <p>Fill this out and I will get back to you within one business day.</p>
 
-    <div id="form-wrap" style="margin-top: 2rem;">
+    <div id="form-wrap">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" placeholder="Your name" autocomplete="name">
@@ -517,7 +138,7 @@
         <input type="text" id="success" placeholder="e.g. consistently selling my high margin offer">
       </div>
       <div class="form-group">
-        <label>Budget range</label>
+        <label>Monthly Ad Budget Range</label>
         <div class="custom-select" id="budget-select">
           <div class="custom-select-trigger" id="budget-trigger">
             <span id="budget-display">Select a range</span>
@@ -526,10 +147,11 @@
             </svg>
           </div>
           <ul class="custom-select-options" id="budget-options">
-            <li data-value="Under $1,000">Under $1,000</li>
-            <li data-value="$1,000 to $5,000">$1,000 to $5,000</li>
-            <li data-value="$5,000 to $10,000">$5,000 to $10,000</li>
-            <li data-value="$10,000+">$10,000+</li>
+            <li data-value="Under $1,000/mo">Under $1,000/mo</li>
+            <li data-value="$1,000 to $2,500/mo">$1,000 to $2,500/mo</li>
+            <li data-value="$2,500 to $5,000/mo">$2,500 to $5,000/mo</li>
+            <li data-value="$5,000 to $10,000/mo">$5,000 to $10,000/mo</li>
+            <li data-value="$10,000+/mo">$10,000+/mo</li>
             <li data-value="Let's talk">Let's talk</li>
           </ul>
         </div>
@@ -609,7 +231,7 @@
     })
     .then(res => {
       if (res.ok) {
-        document.getElementById('form-wrap').innerHTML = '<p style="font-family: Satoshi, serif; font-size: 1.2rem; font-style: italic; color: rgba(240,237,232,0.7); line-height: 1.7;">Got it. I will be in touch within one business day.</p>';
+        document.getElementById('form-wrap').innerHTML = '<p class="success-message">Got it. I will be in touch within one business day.</p>';
       } else {
         throw new Error('Non-200 response');
       }
