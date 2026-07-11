@@ -727,7 +727,7 @@ body.page-therapists {
   margin-bottom: 2rem;
 }
 
-@keyframes drawRule-therapists { to { width: 60px; } }
+@keyframes drawRule-therapists { from { width: 0; } to { width: 100%; } }
 
 .page-therapists .proposition {
   font-family: var(--font-body);
