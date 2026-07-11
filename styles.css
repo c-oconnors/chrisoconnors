@@ -783,15 +783,6 @@ body.page-therapists {
   margin-top: 7px;
 }
 
-.page-therapists .fit-not {
-  margin-top: 2rem;
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: 1rem;
-  color: rgba(240, 237, 232, 0.4);
-  line-height: 1.65;
-}
-
 .page-therapists .process-item {
   display: flex;
   gap: 1.5rem;
