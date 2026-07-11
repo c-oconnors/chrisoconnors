@@ -889,22 +889,6 @@ body.page-therapists {
   margin-top: 1.25rem;
 }
 
-.page-therapists .async-note {
-  background: rgba(184, 115, 42, 0.06);
-  border-left: 2px solid var(--amber);
-  padding: 1.25rem 1.5rem;
-  margin-top: 2rem;
-}
-
-.page-therapists .async-note p {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: 1.05rem;
-  color: rgba(240, 237, 232, 0.75);
-  line-height: 1.6;
-  margin: 0;
-}
-
 .page-therapists .cta-block { margin-top: 2rem; }
 
 .page-therapists .cta-btn {
